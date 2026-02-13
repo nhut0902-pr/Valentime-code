@@ -23,7 +23,8 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ onPhotosReady }) => {
   const handleUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
     if (files && files.length > 0) {
-      const newImages: GalleryItem[] = Array.from(files).map((file, index) => ({
+      // Add explicit cast to File[] to fix 'unknown' type errors on line 28 and 29
+      const newImages: GalleryItem[] = (Array.from(files) as File[]).map((file, index) => ({
         id: Date.now() + index,
         url: URL.createObjectURL(file),
         caption: file.name.split('.')[0] || 'Kỷ niệm mới'

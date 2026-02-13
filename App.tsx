@@ -44,28 +44,22 @@ const App: React.FC = () => {
     <div className="min-h-screen relative overflow-x-hidden">
       <FloatingHearts />
 
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/30 backdrop-blur-md p-4">
+      {/* Navigation - Updated to match image: Logo on left, Credit on right */}
+      <nav className="fixed top-0 left-0 right-0 z-50 p-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4">
           <div className="flex items-center gap-2 text-rose-600 font-bold text-xl">
             <HeartIcon />
             <span className="font-romantic text-2xl">Valentine's Love</span>
           </div>
-          <div className="hidden md:flex gap-8 text-rose-500 font-medium">
-            <a href="#hero" className="hover:text-rose-700 transition-colors">Lời Ngỏ</a>
-            <a href="#gallery" className="hover:text-rose-700 transition-colors">Kỷ Niệm</a>
-            {showGreeting && <a href="#greeting" className="hover:text-rose-700 transition-colors">Thiệp Chúc</a>}
+          {/* Vị trí người dùng khoanh tròn màu xanh */}
+          <div className="font-romantic text-rose-400 text-lg md:text-xl opacity-90 select-none">
+            💕Made By Nhutcoder
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
       <header id="hero" className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 relative">
-        {/* Nhãn Made By Nhutcoder ở góc trên bên phải (vị trí user đánh dấu) */}
-        <div className="absolute top-24 right-4 md:right-12 z-10 font-romantic text-rose-400 text-lg md:text-xl opacity-80 pointer-events-none select-none">
-           💕Made By Nhutcoder
-        </div>
-
         <div className="mb-8">
           <div className="text-8xl">💝</div>
         </div>
@@ -76,7 +70,7 @@ const App: React.FC = () => {
           Mùa Valentine này, có một người đang rất nhớ bạn và muốn dành tặng bạn những điều tuyệt vời nhất.
         </p>
         
-        <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-2xl relative max-w-lg w-full mb-12">
+        <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-2xl relative max-w-lg w-full mb-12 border border-rose-100">
           <h3 className="text-2xl font-bold text-rose-500 mb-8">Bạn có đồng ý làm Valentine của mình không?</h3>
           <div className="flex flex-wrap justify-center gap-6 relative min-h-[60px]">
             <button 
@@ -101,7 +95,7 @@ const App: React.FC = () => {
           )}
         </div>
 
-        <a href="#gallery" className="text-rose-400 cursor-pointer flex flex-col items-center gap-2 group">
+        <a href="#gallery" className="text-rose-400 cursor-pointer flex flex-col items-center gap-2 group mt-8">
           <span>Kéo xuống xem kỷ niệm</span>
           <svg className="w-8 h-8 transition-transform group-hover:translate-y-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />

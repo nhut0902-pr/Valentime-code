@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's for My Love</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .font-romantic {
+            font-family: 'Dancing Script', cursive;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; }
+        }
+        .heart-particle {
+            position: absolute;
+            bottom: -50px;
+            pointer-events: none;
+            animation: float linear infinite;
+        }
+
+        /* Book-style Card Animation */
+        .book-container {
+            perspective: 2000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .book {
+            position: relative;
+            width: 320px;
+            height: 450px;
+            background-color: #fff;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            border-radius: 4px;
+        }
+        @media (min-width: 768px) {
+            .book {
+                width: 380px;
+                height: 520px;
+            }
+        }
+        .book.is-open {
+            transform: translateX(50%);
+        }
+        .book-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #e11d48;
+            transform-origin: left;
+            transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transform-style: preserve-3d;
+            z-index: 2;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .book.is-open .book-cover {
+            transform: rotateY(-180deg);
+        }
+        .cover-front, .cover-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 4px;
+        }
+        .cover-front {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 8px solid rgba(255,255,255,0.1);
+        }
+        .cover-back {
+            background: #fdf2f2;
+            transform: rotateY(180deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-left: 2px solid rgba(0,0,0,0.1);
+        }
+        .book-page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff9f0; /* Paper color */
+            z-index: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 4px;
+            box-shadow: inset 10px 0 20px rgba(0,0,0,0.05);
+        }
+        
+        /* Decorative Heart on cover */
+        .heart-outline {
+            width: 150px;
+            height: 150px;
+            background: white;
+            position: relative;
+            transform: rotate(45deg);
+            box-shadow: 0 0 20px rgba(255,255,255,0.5);
+        }
+        .heart-outline::before, .heart-outline::after {
+            content: '';
+            width: 150px;
+            height: 150px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart-outline::before { top: -75px; left: 0; }
+        .heart-outline::after { left: -75px; top: 0; }
+
+        .typewriter-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+</head>
+<body class="bg-rose-50 overflow-x-hidden">
+    <div id="root"></div>
+</body>
+</html>

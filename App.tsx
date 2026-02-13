@@ -60,7 +60,12 @@ const App: React.FC = () => {
       </nav>
 
       {/* Hero Section */}
-      <header id="hero" className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20">
+      <header id="hero" className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 relative">
+        {/* Nhãn Made By Nhutcoder ở góc trên bên phải (vị trí user đánh dấu) */}
+        <div className="absolute top-24 right-4 md:right-12 z-10 font-romantic text-rose-400 text-lg md:text-xl opacity-80 pointer-events-none select-none">
+           💕Made By Nhutcoder
+        </div>
+
         <div className="mb-8">
           <div className="text-8xl">💝</div>
         </div>
